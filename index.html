@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSc Notes - Premium Learning Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">BSc Notes</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="#semesters">Semesters</a>
+                <a href="#about">About</a>
+                <a href="admin.html" class="admin-link">Admin</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Premium Learning Platform
+                </div>
+                <h1 class="hero-title">
+                    Master Your BSc
+                    <span class="gradient-text">With Excellence</span>
+                </h1>
+                <p class="hero-description">
+                    Access comprehensive notes, PYQs, and important questions for all semesters. 
+                    Physics, Chemistry, Botany, Zoology & Mathematics.
+                </p>
+                <div class="hero-actions">
+                    <a href="#semesters" class="glass-btn primary-btn">
+                        <span>Explore Notes</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#features" class="glass-btn secondary-btn">
+                        <span>Learn More</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Semesters</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Subjects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Units</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">📚</div>
+                    <div class="card-text">Physics Notes</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🔬</div>
+                    <div class="card-text">Chemistry Lab</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🌿</div>
+                    <div class="card-text">Botany Guide</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="semesters" class="semesters-section">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Semester</h2>
+                <p class="section-subtitle">Select your current semester to access study materials</p>
+            </div>
+            <div class="search-container">
+                <div class="glass-search">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Search subjects, units, or topics..." class="search-input">
+                </div>
+            </div>
+            <div class="semester-grid">
+                <a href="semester.html?sem=1" class="glass-card semester-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="semester-number">01</div>
+                        <h3>Semester 1</h3>
+                        <p>Foundation of Science</p>
+                        <div class="card-subjects">
+                            <span class="subject-tag">Physics</span>
+                            <span class="subject-tag">Chemistry</span>
+                            <span class="subject-tag">Botany</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="semester.html?sem=2" class="glass-card semester-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="semester-number">02</div>
+                        <h3>Semester 2</h3>
+                        <p>Core Sciences</p>
+                        <div class="card-subjects">
+                            <span class="subject-tag">Zoology</span>
+                            <span class="subject-tag">Maths</span>
+                            <span class="subject-tag">Physics</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="semester.html?sem=3" class="glass-card semester-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="semester-number">03</div>
+                        <h3>Semester 3</h3>
+                        <p>Advanced Topics</p>
+                        <div class="card-subjects">
+                            <span class="subject-tag">Chemistry</span>
+                            <span class="subject-tag">Botany</span>
+                            <span class="subject-tag">Maths</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="semester.html?sem=4" class="glass-card semester-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="semester-number">04</div>
+                        <h3>Semester 4</h3>
+                        <p>Specializations</p>
+                        <div class="card-subjects">
+                            <span class="subject-tag">Physics</span>
+                            <span class="subject-tag">Zoology</span>
+                            <span class="subject-tag">Chemistry</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="semester.html?sem=5" class="glass-card semester-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="semester-number">05</div>
+                        <h3>Semester 5</h3>
+                        <p>Advanced Studies</p>
+                        <div class="card-subjects">
+                            <span class="subject-tag">Botany</span>
+                            <span class="subject-tag">Maths</span>
+                            <span class="subject-tag">Physics</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="semester.html?sem=6" class="glass-card semester-card">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="semester-number">06</div>
+                        <h3>Semester 6</h3>
+                        <p>Final Year</p>
+                        <div class="card-subjects">
+                            <span class="subject-tag">Chemistry</span>
+                            <span class="subject-tag">Zoology</span>
+                            <span class="subject-tag">Botany</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose BSc Notes?</h2>
+                <p class="section-subtitle">Premium features designed for your success</p>
+            </div>
+            <div class="features-grid">
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h4>Comprehensive Notes</h4>
+                    <p>Detailed unit-wise notes for all subjects across all semesters</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4>PYQ Section</h4>
+                    <p>Previous year questions with solutions and explanations</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h4>Important Questions</h4>
+                    <p>Curated important questions for exam preparation</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h4>Mobile Friendly</h4>
+                    <p>Access your notes anywhere, anytime on any device</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>BSc Notes</h3>
+                <p>Premium Learning Platform for Science Students</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="#semesters">Semesters</a>
+                    <a href="#features">Features</a>
+                    <a href="#about">About Us</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Subjects</h4>
+                    <a href="#">Physics</a>
+                    <a href="#">Chemistry</a>
+                    <a href="#">Mathematics</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <a href="#">Support</a>
+                    <a href="#">Feedback</a>
+                    <a href="admin.html">Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BSc Notes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
