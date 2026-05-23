@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject - BSc Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">BSc Notes</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#semesters">Semesters</a>
+                <a href="admin.html">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="subject-detail">
+            <div class="section-header">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="semester.html" id="semLink">Semester</a>
+                    <span>/</span>
+                    <span class="current" id="subjectTitle">Subject</span>
+                </div>
+                <h1 class="section-title" id="subjectHeading">Subject Units</h1>
+                <p class="section-subtitle">Access unit-wise notes, PYQs, and important questions</p>
+            </div>
+            <div class="units-grid" id="unitsGrid">
+                <!-- Units will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>BSc Notes</h3>
+                <p>Premium Learning Platform for Science Students</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BSc Notes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
