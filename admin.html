@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BSc Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="admin-layout">
+        <aside class="admin-sidebar glass-sidebar">
+            <div class="sidebar-brand">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Admin</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-tab="dashboard">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="11" y="2" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="2" y="11" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="11" y="11" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="#leads" class="nav-item" data-tab="leads">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 11C12.21 11 14 9.21 14 7C14 4.79 12.21 3 10 3C7.79 3 6 4.79 6 7C6 9.21 7.79 11 10 11Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M3 18C3 14.13 6.13 11 10 11C13.87 11 17 14.13 17 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Leads
+                </a>
+                <a href="#notes-generator" class="nav-item" data-tab="notes-generator">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 14H16M4 10H16M6 6H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M3 18H17C17.55 18 18 17.55 18 17V3C18 2.45 17.55 2 17 2H3C2.45 2 2 2.45 2 3V17C2 17.55 2.45 18 3 18Z" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    Notes Generator
+                </a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <!-- Dashboard Tab -->
+            <section class="admin-tab active" id="dashboard-tab">
+                <h1 class="admin-title">Dashboard Overview</h1>
+                <div class="stats-grid">
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3 id="totalLeads">0</h3>
+                            <p>Total Leads</p>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <h3>150+</h3>
+                            <p>Total Notes</p>
+                        </div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-info">
+                            <h3 id="todayLeads">0</h3>
+                            <p>Today's Leads</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leads Tab -->
+            <section class="admin-tab" id="leads-tab">
+                <div class="tab-header">
+                    <h1 class="admin-title">Manage Leads</h1>
+                    <div class="tab-actions">
+                        <button class="glass-btn" id="exportCsv">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M14 10V12.67C14 13.4 13.4 14 12.67 14H3.33C2.6 14 2 13.4 2 12.67V10M4.67 6.67L8 10M8 10L11.33 6.67M8 10V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Export CSV
+                        </button>
+                        <div class="glass-search">
+                            <input type="text" id="leadSearch" placeholder="Search leads..." class="search-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="leads-table-container glass-card">
+                    <table class="leads-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Mobile</th>
+                                <th>Semester</th>
+                                <th>Subject</th>
+                                <th>Note</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leadsTableBody">
+                            <!-- Leads will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Notes Generator Tab -->
+            <section class="admin-tab" id="notes-generator-tab">
+                <h1 class="admin-title">Generate Notes Structure</h1>
+                <div class="generator-form glass-card">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <select id="genSemester">
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <select id="genSubject">
+                                <option value="physics">Physics</option>
+                                <option value="chemistry">Chemistry</option>
+                                <option value="botany">Botany</option>
+                                <option value="zoology">Zoology</option>
+                                <option value="maths">Maths</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Unit</label>
+                            <select id="genUnit">
+                                <option value="1">Unit 1</option>
+                                <option value="2">Unit 2</option>
+                                <option value="3">Unit 3</option>
+                                <option value="4">Unit 4</option>
+                                <option value="5">Unit 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Markdown Content</label>
+                        <textarea id="genContent" rows="15" placeholder="Write your markdown content here..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Preview</label>
+                        <div id="previewContent" class="preview-box glass-card"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="glass-btn primary-btn" onclick="previewMarkdown()">
+                            Preview
+                        </button>
+                        <button class="glass-btn secondary-btn" onclick="saveNote()">
+                            Save Note
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
