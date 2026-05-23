@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - BSc Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notes.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="reading-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <nav class="glass-nav notes-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">BSc Notes</span>
+                </a>
+                <button class="back-btn" onclick="history.back()">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12 16L6 10L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Back
+                </button>
+            </div>
+            <div class="nav-controls">
+                <button class="control-btn" id="langToggle" title="Toggle Language">
+                    <span>EN</span>/<span>HI</span>
+                </button>
+                <button class="control-btn" id="themeToggle" title="Toggle Theme">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="notes-layout">
+        <aside class="notes-sidebar glass-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Table of Contents</h3>
+            </div>
+            <nav class="toc-nav" id="tocNav">
+                <!-- Dynamically generated TOC -->
+            </nav>
+        </aside>
+
+        <main class="notes-content">
+            <div class="notes-header glass-card">
+                <h1 class="notes-title" id="notesTitle">Loading...</h1>
+                <div class="notes-meta">
+                    <span class="meta-tag" id="semesterTag">Semester</span>
+                    <span class="meta-tag" id="subjectTag">Subject</span>
+                    <span class="meta-tag" id="unitTag">Unit</span>
+                </div>
+            </div>
+
+            <article class="notes-article glass-card" id="notesContent">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading notes...</p>
+                </div>
+            </article>
+
+            <div class="notes-actions glass-card">
+                <button class="glass-btn" onclick="window.print()">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M4 6V2H12V6M4 12H3C2.45 12 2 11.55 2 11V7C2 6.45 2.45 6 3 6H13C13.55 6 14 6.45 14 7V11C14 11.55 13.55 12 13 12H12M4 12V14H12V12M4 12H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Print
+                </button>
+                <button class="glass-btn" id="downloadPdfBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M14 10V12.67C14 13.4 13.4 14 12.67 14H3.33C2.6 14 2 13.4 2 12.67V10M4.67 6.67L8 10M8 10L11.33 6.67M8 10V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Premium Unlock Modal -->
+    <div class="modal-overlay" id="unlockModal">
+        <div class="modal-content glass-card">
+            <div class="modal-glow"></div>
+            <div class="modal-header">
+                <div class="modal-icon">🔒</div>
+                <h2>Unlock Full Notes</h2>
+                <p>Enter your details to access complete study material</p>
+            </div>
+            <form id="unlockForm" class="modal-form">
+                <div class="form-group">
+                    <label for="unlockName">Full Name</label>
+                    <input type="text" id="unlockName" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="unlockMobile">Mobile Number</label>
+                    <input type="tel" id="unlockMobile" required placeholder="Enter mobile number" pattern="[0-9]{10}">
+                </div>
+                <button type="submit" class="glass-btn primary-btn full-width">
+                    <span>Unlock Now</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M5 8H11M8 5L11 8L8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+            <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/notes.js"></script>
+</body>
+</html>
